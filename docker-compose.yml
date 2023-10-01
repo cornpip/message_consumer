@@ -7,12 +7,13 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=1234
-      - MONGO_INITDB_DATABASE=message
+#      - MONGO_INITDB_DATABASE=message
 
   mongo-express:
     image: mongo-express
     depends_on:
       - mongodb
+    restart: always
     ports:
       - 8081:8081
     environment:
